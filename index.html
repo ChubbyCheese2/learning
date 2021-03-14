@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <script>
+        let data = [{ "id": 1, "first_name": "Candi", "last_name": "Minghetti", "email": "cminghetti0@wix.com" },
+        { "id": 2, "first_name": "Adrien", "last_name": "McKie", "email": "amckie1@exblog.jp" },
+        { "id": 3, "first_name": "Loutitia", "last_name": "Blatherwick", "email": "lblatherwick2@cdbaby.com" },
+        { "id": 4, "first_name": "Mirilla", "last_name": "Surtees", "email": "msurtees3@live.com" },
+        { "id": 5, "first_name": "Dani", "last_name": "Brumen", "email": "dbrumen4@yahoo.com" },
+        { "id": 6, "first_name": "Jodi", "last_name": "Dorton", "email": "jdorton5@hud.gov" },
+        { "id": 7, "first_name": "Sandy", "last_name": "Blanket", "email": "sblanket6@marriott.com" },
+        { "id": 8, "first_name": "Ange", "last_name": "Shaxby", "email": "ashaxby7@tinyurl.com" },
+        { "id": 9, "first_name": "Norma", "last_name": "Chapelle", "email": "nchapelle8@deliciousdays.com" },
+        { "id": 10, "first_name": "Megan", "last_name": "Kramer", "email": "mkramer9@zdnet.com" },
+        { "id": 11, "first_name": "Emanuele", "last_name": "Sparshutt", "email": "esparshutta@webnode.com" },
+        { "id": 12, "first_name": "Nissa", "last_name": "Hanmore", "email": "nhanmoreb@businessweek.com" },
+        { "id": 13, "first_name": "Bess", "last_name": "Files", "email": "bfilesc@elegantthemes.com" },
+        { "id": 14, "first_name": "Berke", "last_name": "Klimashevich", "email": "bklimashevichd@sciencedirect.com" },
+        { "id": 15, "first_name": "Janetta", "last_name": "Fabbro", "email": "jfabbroe@51.la" },
+        { "id": 16, "first_name": "Virgie", "last_name": "Comley", "email": "vcomleyf@xing.com" },
+        { "id": 17, "first_name": "Adam", "last_name": "Bath", "email": "abathg@storify.com" },
+        { "id": 18, "first_name": "Abigael", "last_name": "Biaggioni", "email": "abiaggionih@ifeng.com" },
+        { "id": 19, "first_name": "Dionysus", "last_name": "Mattityahou", "email": "dmattityahoui@statcounter.com" },
+        { "id": 20, "first_name": "Jacinta", "last_name": "Le Marchant", "email": "jlemarchantj@boston.com" }];
+
+        let onLoad = () => {
+            data.sort((a, b) => {
+                return a.first_name.localeCompare(b.first_name)
+            }).forEach(element => {
+                let names = document.querySelector('#names');
+                let htmlElement = document.createElement('div');
+                htmlElement.innerText = element.first_name;
+                names.append(htmlElement);
+            });
+        }
+    </script>
+</head>
+
+<body onload="onLoad()">
+    <div id="names"></div>
+</body>
+
+</html>
