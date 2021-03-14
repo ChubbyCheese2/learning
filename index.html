@@ -1,6 +1,27 @@
 <html>
 
 <head>
+    <style>
+        body {
+            color: white;
+            background-image: url('images/spook.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        #wrapper {
+            width: 100%;
+        }
+
+        #names {
+            width: 100%;
+        }
+
+        #names .heading {
+            font-weight: bolder;
+        }
+    </style>
     <script>
         let data = [{ "id": 1, "first_name": "Candi", "last_name": "Minghetti", "email": "cminghetti0@wix.com" },
         { "id": 2, "first_name": "Adrien", "last_name": "McKie", "email": "amckie1@exblog.jp" },
@@ -24,20 +45,49 @@
         { "id": 20, "first_name": "Jacinta", "last_name": "Le Marchant", "email": "jlemarchantj@boston.com" }];
 
         let onLoad = () => {
+            if (confirm('Would you like to help us? We know you want to.')) {
+                alert('Meet me outside your house at 2:00 am. These people are in for a surprise.');
+                showData();
+            } else {
+                window.location = "no.html";
+            }
+
+        }
+
+        let showData = () => {
+            let wrapper = document.querySelector('#wrapper');
+            let names = document.querySelector('#names');
+            let row = document.createElement('tr');
+            row.className = "heading";
+            row.insertCell(0).innerText = "First Name";
+            row.insertCell(1).innerText = "Last Name";
+            row.insertCell(2).innerText = "Email";
+            names.append(row);
             data.sort((a, b) => {
                 return a.first_name.localeCompare(b.first_name)
             }).forEach(element => {
-                let names = document.querySelector('#names');
-                let htmlElement = document.createElement('div');
-                htmlElement.innerText = element.first_name;
-                names.append(htmlElement);
+                let row = document.createElement('tr');
+                row.insertCell(0).innerText = element.first_name;
+                row.insertCell(1).innerText = element.last_name;
+                row.insertCell(2).innerText = element.email;
+                names.append(row);
             });
+
         }
     </script>
 </head>
 
 <body onload="onLoad()">
-    <div id="names"></div>
+    <div id="wrapper">
+        <h1>
+            People who need to go to a better place
+        </h1>
+        <h2>
+            they really need it
+        </h2>
+        <table id="names"></table>
+    </div>
+
 </body>
 
 </html>
