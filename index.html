@@ -4,7 +4,7 @@
     <style>
         body {
             color: white;
-            background-image: url('images/spook.jpg');
+            background-image: url('assets/images/spook.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -45,11 +45,15 @@
         { "id": 20, "first_name": "Jacinta", "last_name": "Le Marchant", "email": "jlemarchantj@boston.com" }];
 
         let onLoad = () => {
-            if (confirm('Would you like to help us? We know you want to.')) {
-                alert('Meet me outside your house at 2:00 am. These people are in for a surprise.');
+            let msg = 'Would you like to help us? We know you want to.';
+            let result = confirm(msg);
+            if (result) {
+                let alertMsg = 'Meet me outside your house at 2:00 am. These people are in for a surprise.';
+                alert(alertMsg);
                 showData();
             } else {
-                window.location = "no.html";
+                alert("Wrong answer.....");
+                window.location = "assets/no.html";
             }
 
         }
